@@ -1,4 +1,4 @@
-# delete-inactive-users
+# Delete Inactive Users
 The **Delete Inactive Users** WordPress plugin is a robust tool designed to help administrators efficiently manage user accounts by deleting inactive users based on their role and last login date. 
 
 Ideal for optimizing database performance and maintaining user data hygiene, this plugin allows you to configure custom settings and batch process large datasets.
