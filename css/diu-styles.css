@@ -10,8 +10,10 @@ form#diu-delete-users-form {
 }
 
 input[type="text"],
-select {
+select,
+#diu-user-role {
     display: block;
+    max-width: 100%;
     width: 100%;
     padding: 10px 15px;
     font-size: 16px;
@@ -23,7 +25,8 @@ select {
 }
 
 input[type="text"]:focus,
-select:focus {
+select:focus,
+#diu-user-role:focus {
     outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);

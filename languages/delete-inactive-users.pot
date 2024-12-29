@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Delete Inactive Users\n"
-"POT-Creation-Date: 2024-12-28 14:59-0500\n"
-"PO-Revision-Date: 2024-12-28 14:59-0500\n"
+"POT-Creation-Date: 2024-12-28 23:13-0500\n"
+"PO-Revision-Date: 2024-12-28 23:13-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -47,11 +47,11 @@ msgstr ""
 msgid "Invalid parameters."
 msgstr ""
 
-#: delete-inactive-users.php:203
+#: delete-inactive-users.php:206
 msgid "No users found for deletion."
 msgstr ""
 
-#: delete-inactive-users.php:220
+#: delete-inactive-users.php:223
 msgid "No users left to delete."
 msgstr ""
 

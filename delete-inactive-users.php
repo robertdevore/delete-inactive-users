@@ -167,12 +167,15 @@ function diu_render_settings_page() {
 function diu_prepare_deletion() {
     check_ajax_referer( 'diu_delete_users', 'nonce' );
 
-    $role = sanitize_text_field( $_POST['user_role'] );
-    $cutoff_date = strtotime( sanitize_text_field( $_POST['cutoff_date'] ) );
+    $role        = sanitize_text_field( $_POST['user_role'] );
+    $cutoff_date = sanitize_text_field( $_POST['cutoff_date'] );
 
     if ( empty( $role ) || empty( $cutoff_date ) ) {
         wp_send_json_error( __( 'Invalid parameters.', 'delete-inactive-users' ) );
     }
+
+    // Ensure the cutoff_date is in the format 'YYYY-MM-DD HH:MM:SS' for comparison.
+    $cutoff_datetime = date( 'Y-m-d H:i:s', strtotime( $cutoff_date . ' 00:00:00' ) );
 
     $user_query = new WP_User_Query(
         [
@@ -186,9 +189,9 @@ function diu_prepare_deletion() {
                 ],
                 [
                     'key'     => 'last_login',
-                    'value'   => $cutoff_date,
+                    'value'   => $cutoff_datetime,
                     'compare' => '<',
-                    'type'    => 'NUMERIC',
+                    'type'    => 'DATETIME',
                 ]
             ]
         ]

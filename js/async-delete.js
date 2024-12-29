@@ -11,6 +11,7 @@ jQuery(document).ready(function ($) {
     const progressBar = $("#diu-progress-bar");
     const progressContainer = $("#diu-progress");
     const statusMessage = $("#diu-status-message");
+    const successMessage = $("#diu-success-message");
 
     $("#diu-start-delete").on("click", function () {
         const userRole = $("#diu-user-role").val();
@@ -23,6 +24,7 @@ jQuery(document).ready(function ($) {
 
         statusMessage.text("Preparing deletion...").removeClass("text-red-500").addClass("text-blue-500");
         progressContainer.removeClass("hidden");
+        successMessage.addClass("hidden").text("");
 
         // Prepare deletion
         $.post(diu_ajax_params.ajax_url, {
@@ -68,8 +70,16 @@ jQuery(document).ready(function ($) {
                         if (remaining > 0) {
                             processNextBatch();
                         } else {
-                            statusMessage.text("Deletion complete!").addClass("text-green-500");
+                            statusMessage.text("");
                             progressContainer.addClass("hidden");
+                            successMessage
+                                .removeClass("hidden")
+                                .addClass("text-green-500")
+                                .text("Deletion complete!");
+
+                            setTimeout(() => {
+                                successMessage.addClass("hidden").text("");
+                            }, 2000);
                         }
                     } else {
                         statusMessage.text(response.data || "Error during batch processing.").addClass("text-red-500");
