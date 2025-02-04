@@ -12,7 +12,7 @@
   * Plugin Name: Delete Inactive Users
   * Description: Deletes users based on role and inactivity date.
   * Plugin URI:  https://github.com/robertdevore/delete-inactive-users/
-  * Version:     1.0.0
+  * Version:     1.0.1
   * Author:      Robert DeVore
   * Author URI:  https://robertdevore.com/
   * License:     GPL-2.0+
@@ -42,7 +42,7 @@ $myUpdateChecker->setBranch( 'main' );
 /**
  * Current plugin version.
  */
-define( 'DIU_VERSION', '1.0.0' );
+define( 'DIU_VERSION', '1.0.1' );
 
 // Check if Composer's autoloader is already registered globally.
 if ( ! class_exists( 'RobertDevore\WPComCheck\WPComPluginHandler' ) ) {
