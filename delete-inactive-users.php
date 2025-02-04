@@ -44,6 +44,20 @@ $myUpdateChecker->setBranch( 'main' );
  */
 define( 'DIU_VERSION', '1.0.0' );
 
+/**
+ * Load plugin text domain for translations
+ * 
+ * @since  1.0.1
+ * @return void
+ */
+function diu_load_textdomain() {
+    load_plugin_textdomain( 
+        'delete-inactive-users',
+        false,
+        dirname( plugin_basename( __FILE__ ) ) . '/languages/'
+    );
+}
+add_action( 'plugins_loaded', 'diu_load_textdomain' );
 
 /**
  * Add settings page to the admin menu.
