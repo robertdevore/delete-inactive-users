@@ -114,7 +114,7 @@ function diu_enqueue_scripts( $hook ) {
 
     wp_enqueue_style(
         'jquery-ui-style',
-        '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css',
+        plugin_dir_url( __FILE__ ) . 'css/jquery-ui.css',
         [],
         null
     );
